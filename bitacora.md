@@ -41,9 +41,11 @@ Usa el código con precaución.
 ## 3. Patrones con ciclos manuales (Minirreto 2)
 
 - **`totalVendido(ventas)`**:
-  - *Patrón usado (contador, acumulador, filtro, extremo)*:
+  - *Patrón usado (contador, acumulador, filtro, extremo)*: Hacemos un iterador entre todos los idices del arreglo de ventas que se definio en valor venta  y despues va cogiendo ese valor y lo va sumando hasta llegar al id 12 o al indice 11
+
+
 - **`totalUnidades(ventas)`**:
-  - *Patrón usado*:
+  - *Patrón usado*: Se hace el acumulador 
 - **`ventaMayorValor(ventas)`**:
   - *Patrón usado*:
 - **`ventasDeCiudad(ventas, ciudad)`**:

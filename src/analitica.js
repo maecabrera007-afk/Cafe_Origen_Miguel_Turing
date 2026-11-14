@@ -13,7 +13,7 @@
  * @returns {number} Valor monetario de la venta.
  */
 function valorVenta(venta) {
-  // Tu código aquí
+  return venta.cantidad * venta.precio;
 }
 
 // ============================================================================
@@ -29,8 +29,13 @@ function valorVenta(venta) {
  * @returns {number} Dinero total vendido.
  */
 function totalVendido(ventas) {
-  // Tu código aquí
+  let total = 0;
+  for (const venta of ventas) {
+    total += valorVenta(venta);
+  }
+  return total;
 }
+
 
 /**
  * Suma todas las unidades vendidas en las órdenes válidas (cantidad > 0).
@@ -38,9 +43,19 @@ function totalVendido(ventas) {
  * @param {Array} ventas - Arreglo de objetos de ventas.
  * @returns {number} Total de unidades vendidas.
  */
+
 function totalUnidades(ventas) {
-  // Tu código aquí
+  let unidades = 0;
+
+  for (const venta of ventas) {
+    if (venta.cantidad > 0) {
+      unidades += venta.cantidad;
+    }
+
+  }
+  return unidades; 
 }
+
 
 /**
  * Devuelve el objeto completo de la venta con mayor valor total (cantidad * precio).
@@ -49,7 +64,18 @@ function totalUnidades(ventas) {
  * @returns {Object|null} El objeto de la venta más alta.
  */
 function ventaMayorValor(ventas) {
-  // Tu código aquí
+  
+  let mayor = null;
+  for(const venta of ventas){
+    if(mayor === null || valorVenta(venta) > valorVenta(mayor)){
+      mayor = venta;
+    
+    }
+
+  } 
+
+  return mayor;
+
 }
 
 /**
@@ -60,9 +86,8 @@ function ventaMayorValor(ventas) {
  * @param {string} ciudad - Nombre de la ciudad a buscar.
  * @returns {Array} Nuevo arreglo con las ventas de esa ciudad.
  */
-function ventasDeCiudad(ventas, ciudad) {
-  // Tu código aquí
-}
+
+
 
 /**
  * Calcula el promedio de dinero por venta, dividiendo el total vendido
