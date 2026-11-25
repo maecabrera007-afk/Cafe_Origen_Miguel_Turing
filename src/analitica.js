@@ -87,6 +87,21 @@ function ventaMayorValor(ventas) {
  * @returns {Array} Nuevo arreglo con las ventas de esa ciudad.
  */
 
+function ventasDeCiudad(ventas, ciudad) {
+  let resultado = [];
+  const ciudadBuscada = ciudad.trim().toLocaleLowerCase
+
+  for (const venta of ventas){
+    if(venta.ciudad && venta.cantidad > 0 ){
+      const ciudadVenta = venta.ciudad.trim().toLocaleLowerCase();
+      
+      if (ciudadVenta === ciudadBuscada){
+        ventaFlitrada.push(venta)
+      }
+    }
+  }
+   return ventaFlitrada;
+}
 
 
 /**
@@ -97,7 +112,22 @@ function ventaMayorValor(ventas) {
  * @returns {number} Promedio por venta válida.
  */
 function promedioPorVenta(ventas) {
-  // Tu código aquí
+  let totalDinero = 0;
+  let ventasValias = 0;
+
+  for(const venta of ventas ){
+    if (venta.cantidad > 0){
+      totalDinero += valorVenta(venta);
+      ventasValidas ++;
+    }
+  }
+if (ventasValidas === 0){
+  return 0;
+}  
+
+return totalDinero/ventasValias
+
+
 }
 
 // ============================================================================
