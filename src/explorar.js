@@ -1,7 +1,6 @@
-
 /**
- * Reporte de Consola - Café Origen v0.1 (Plantilla Base)
- * Ejecuta este archivo para probar tus funciones: node src/reporte.js
+ * Exploración de Consola - Café Origen v0.1
+ * Ejecuta este archivo para probar tus funciones: node src/explorar.js
  */
 const { ventas } = require("./datos");
 const {
